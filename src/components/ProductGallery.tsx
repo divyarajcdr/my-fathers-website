@@ -2,7 +2,7 @@
 
 import { useState, useMemo, useEffect } from 'react';
 import { ArrowRight, Phone, Gem, X, Search, ZoomIn, ZoomOut, RotateCcw } from "lucide-react";
-import { Product } from '@/app/page';
+import type { Product } from '@/lib/types';
 import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 
 export default function ProductGallery({ products, allCategories }: { products: Product[]; allCategories: string[] }) {

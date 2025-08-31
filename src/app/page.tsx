@@ -1,5 +1,6 @@
 "use client";
 
+import type { Product } from '@/lib/types';
 import { useState, useCallback, useEffect } from 'react';
 import LoadingScreen from '@/components/LoadingScreen';
 import { PremiumNavigationHeader } from '@/components/Navigation';
@@ -10,19 +11,6 @@ import ContactSection from '@/components/ContactSection';
 
 import { db } from '@/lib/firebase';
 import { collection, getDocs, query, orderBy, clearIndexedDbPersistence } from 'firebase/firestore';
-
-export interface Product {
-  id: string;
-  name: string;
-  description: string;
-  originalPrice: number;
-  ourPrice: number;
-  discount: number;
-  primaryImageUrl: string;
-  imageUrls: string[];
-  categoryName: string;
-  subcategoryName: string;
-}
 
 export default function HomePage() {
   const [isLoading, setIsLoading] = useState(true);
